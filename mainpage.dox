@@ -1,0 +1,65 @@
+/**
+ * @mainpage Sistema de Monitoreo Ambiental con FSM en ESP32
+ *
+ * @section intro Introducción
+ *
+ * Este proyecto implementa un sistema embebido de monitoreo ambiental
+ * basado en una Máquina de Estados Finita (FSM) ejecutada sobre ESP32.
+ *
+ * El sistema permite supervisar variables ambientales críticas y
+ * reaccionar mediante estados de alerta y alarma.
+ *
+ * @section objetivos Objetivos del Sistema
+ *
+ * - Monitorear temperatura y humedad mediante sensor DHT11.
+ * - Detectar condiciones de baja iluminación mediante LDR.
+ * - Detectar presencia de flama.
+ * - Indicar estados mediante LED RGB.
+ * - Implementar una arquitectura no bloqueante.
+ *
+ * @section arquitectura Arquitectura del Sistema
+ *
+ * El sistema está organizado en módulos independientes:
+ *
+ * - FSM (FmsApp2): Control de estados del sistema.
+ * - Tasks (TaskRT2): Gestión de temporización no bloqueante.
+ * - Sensors (Sensors2): Adquisición y procesamiento de señales.
+ * - Config (Config2): Definición de pines y parámetros.
+ *
+ * La arquitectura sigue un modelo cooperativo basado en actualización
+ * periódica desde el loop principal.
+ *
+ * @section estados Máquina de Estados
+ *
+ * Estados implementados:
+ *
+ * - INICIO
+ * - MON_TEMP
+ * - MON_HUMED
+ * - MON_LUZ
+ * - ALERTA
+ * - ALARMA
+ *
+ * Las transiciones se basan en:
+ * - Umbrales configurables
+ * - Eventos temporizados
+ * - Señales digitales de sensores
+ *
+ * @section hardware Hardware Utilizado
+ *
+ * - ESP32
+ * - Sensor DHT11
+ * - Sensor LDR (ADC)
+ * - Sensor de flama (digital)
+ * - LED RGB
+ *
+ * @section metodologia Metodología de Diseño
+ *
+ * El diseño sigue principios de:
+ *
+ * - Separación de responsabilidades
+ * - Arquitectura modular
+ * - Ejecución no bloqueante
+ * - Encapsulación de hardware
+ *
+ */
