@@ -1,0 +1,23 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "qmi8658_simple.c"
+        "max30100_simple.c"
+        "espnow_node1.c"
+        "lcd_ui.c"
+    INCLUDE_DIRS "."
+    REQUIRES
+        freertos
+        log
+        esp_timer
+        esp_wifi
+        esp_event
+        nvs_flash
+        esp_driver_gpio
+        esp_driver_spi
+        esp_driver_i2c
+        esp_lcd
+        esp_lcd_touch
+        espressif__esp_lcd_touch_cst816s
+        espressif__esp_lcd_gc9a01
+)
